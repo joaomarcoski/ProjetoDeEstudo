@@ -1,0 +1,19 @@
+<?
+$destinatario = "joaofilipemarcoski@gmail.com";
+
+$nome = $_REQUEST['nome'];
+$email = $_REQUEST['email'];
+$mensagem = $_REQUEST['mensagem'];
+$assunto = $_REQUEST['assunto'];
+
+$body = "===================================" . "\n";
+$body = $body . "FALE CONOSCO" . "\n";
+$body = $body . "===================================" . "\n\n";
+$body = $body . "Nome: " . $nome . "\n";
+$body = $body . "Email: " . $email . "\n";
+$body = $body . "Mensagem: " . $mensagem . "\n\n";
+$body = $body . "===================================" . "\n";
+
+// envia o email
+mail($destinatario, $assunto , $body, "From: $email\r\n");
+?>
